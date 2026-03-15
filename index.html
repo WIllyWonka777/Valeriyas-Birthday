@@ -158,30 +158,9 @@
         setTimeout(() => err.style.display = 'none', 3000);
         return;
       }
-      const FORM_ID = '1FAIpQLSdDg4qQqYdR6sCulJte1GnF63ZymRoWcjGSdUbnxTE1Knvhfw';
-      const iframe = document.createElement('iframe');
-      iframe.name = 'silent-submit';
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
-      form.target = 'silent-submit';
-      const fields = {
-        'entry.753256438': name,
-        'entry.677177250': selections.attending,
-        'entry.1514465093': selections.plusone,
-        'entry.1968330831': message
-      };
-      for (const [key, val] of Object.entries(fields)) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = val;
-        form.appendChild(input);
-      }
-      document.body.appendChild(form);
-      form.submit();
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkv8MMd91ipOzEhZWB3IPKPMEKJTz_5yq9B1XlBoXB5CN-TtBbS1PMRahr33W7qjvN/exec';
+      const params = new URLSearchParams({ name, attending: selections.attending, plusone: selections.plusone, message });
+      fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params }).catch(() => {});
       const attending = selections.attending.includes('be there');
       document.getElementById('successMsg').textContent = attending ? 'Obviously. See you there. 🥂' : 'Noted. 🥂';
       document.getElementById('rsvpSection').style.display = 'none';
