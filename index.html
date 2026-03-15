@@ -4,97 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Valeriya's Birthday Night — March 21st</title>
-
-  <!-- Open Graph / WhatsApp / Instagram link preview -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Valeriya's Birthday Night 🥂" />
   <meta property="og:description" content="Saturday, March 21st · 8:00 PM · Casa Madera, 550 Wellington St W. Let's make memories I'll brag about for years." />
+  <meta property="og:image" content="https://i.imgur.com/fDRNuQp.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Valeriya's Birthday Night 🥂" />
   <meta name="twitter:description" content="Saturday, March 21st · 8:00 PM · Casa Madera, 550 Wellington St W." />
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --gold: #c9a96e;
-      --gold-light: #e8d5b0;
-      --gold-pale: #f5e6c8;
-      --dark: #0d0d0d;
-    }
-
-    body {
-      min-height: 100vh;
-      background: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      padding: 24px 16px;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.25; pointer-events: none; z-index: 0;
-    }
-
+    :root { --gold: #c9a96e; --gold-light: #e8d5b0; --gold-pale: #f5e6c8; --dark: #0d0d0d; }
+    body { min-height: 100vh; background: var(--dark); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; padding: 24px 16px; overflow-x: hidden; position: relative; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); opacity: 0.25; pointer-events: none; z-index: 0; }
     .deco-circle-1 { position: fixed; top: -120px; right: -120px; width: 380px; height: 380px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.08); pointer-events: none; }
     .deco-circle-2 { position: fixed; bottom: -80px; left: -80px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.06); pointer-events: none; }
-
     .confetti-container { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
     .confetti-piece { position: absolute; top: -20px; animation: fall linear infinite; }
-    @keyframes fall {
-      0%   { transform: translateY(0) rotate(0deg); opacity: 0.9; }
-      80%  { opacity: 0.6; }
-      100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
-    }
-
-    .card {
-      background: linear-gradient(160deg, #161616 0%, #101010 100%);
-      border: 1px solid rgba(201,169,110,0.28);
-      border-radius: 4px; max-width: 400px; width: 100%;
-      padding: 48px 36px 40px;
-      position: relative; z-index: 1;
-      animation: cardReveal 1s ease forwards, glow 4s ease-in-out 1s infinite;
-      opacity: 0;
-    }
+    @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity: 0.9; } 80% { opacity: 0.6; } 100% { transform: translateY(110vh) rotate(540deg); opacity: 0; } }
+    .card { background: linear-gradient(160deg, #161616 0%, #101010 100%); border: 1px solid rgba(201,169,110,0.28); border-radius: 4px; max-width: 400px; width: 100%; padding: 48px 36px 40px; position: relative; z-index: 1; animation: cardReveal 1s ease forwards, glow 4s ease-in-out 1s infinite; opacity: 0; }
     .card::before, .card::after { content: ''; position: absolute; width: 20px; height: 20px; border-color: rgba(201,169,110,0.35); border-style: solid; }
     .card::before { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
-    .card::after  { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
-
+    .card::after { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
     @keyframes cardReveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 30px rgba(201,169,110,0.08), 0 20px 60px rgba(0,0,0,0.6); }
-      50%       { box-shadow: 0 0 50px rgba(201,169,110,0.18), 0 20px 60px rgba(0,0,0,0.6); }
-    }
+    @keyframes glow { 0%, 100% { box-shadow: 0 0 30px rgba(201,169,110,0.08), 0 20px 60px rgba(0,0,0,0.6); } 50% { box-shadow: 0 0 50px rgba(201,169,110,0.18), 0 20px 60px rgba(0,0,0,0.6); } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes shimmer { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
-
     .ornament { text-align: center; margin-bottom: 26px; animation: fadeUp 0.8s 0.2s ease both; }
     .ornament span { color: var(--gold); font-size: 13px; letter-spacing: 10px; animation: shimmer 2.5s ease-in-out infinite; }
-
     .header { text-align: center; margin-bottom: 28px; animation: fadeUp 0.8s 0.3s ease both; opacity: 0; }
     .eyebrow { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; font-weight: 400; }
     .name { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 300; color: var(--gold-pale); line-height: 1; letter-spacing: 2px; margin-bottom: 4px; }
     .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; font-style: italic; color: var(--gold); letter-spacing: 3px; }
-
     .divider { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; animation: fadeUp 0.8s 0.45s ease both; opacity: 0; }
     .divider-line { flex: 1; height: 1px; }
-    .divider-line.left  { background: linear-gradient(to right, transparent, rgba(201,169,110,0.35)); }
+    .divider-line.left { background: linear-gradient(to right, transparent, rgba(201,169,110,0.35)); }
     .divider-line.right { background: linear-gradient(to left, transparent, rgba(201,169,110,0.35)); }
     .divider-icon { font-size: 16px; }
-
     .quote { text-align: center; margin-bottom: 30px; animation: fadeUp 0.8s 0.55s ease both; opacity: 0; }
     .quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(245,230,200,0.72); line-height: 1.75; }
-
     .details { background: rgba(201,169,110,0.04); border: 1px solid rgba(201,169,110,0.14); border-radius: 3px; padding: 22px 24px; margin-bottom: 24px; animation: fadeUp 0.8s 0.65s ease both; opacity: 0; }
     .detail-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
     .detail-row:last-child { margin-bottom: 0; }
@@ -102,86 +52,46 @@
     .detail-label { font-family: 'Montserrat', sans-serif; font-size: 8px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 3px; font-weight: 500; }
     .detail-value { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--gold-pale); font-weight: 400; line-height: 1.2; }
     .detail-sub { font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(245,230,200,0.45); margin-top: 3px; letter-spacing: 0.5px; }
-
     .warning { text-align: center; margin-bottom: 28px; animation: fadeUp 0.8s 0.75s ease both; opacity: 0; }
     .warning p { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 2px; color: rgba(201,169,110,0.65); text-transform: uppercase; }
-
     .rsvp-section { animation: fadeUp 0.8s 0.85s ease both; opacity: 0; }
-
     .rsvp-label { font-family: 'Montserrat', sans-serif; font-size: 8px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; display: block; font-weight: 500; }
-
-    .rsvp-input {
-      width: 100%; padding: 12px 14px;
-      background: rgba(201,169,110,0.05);
-      border: 1px solid rgba(201,169,110,0.2);
-      border-radius: 3px; color: var(--gold-pale);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px; margin-bottom: 16px;
-      transition: border-color 0.2s ease; outline: none;
-    }
+    .rsvp-input { width: 100%; padding: 12px 14px; background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.2); border-radius: 3px; color: var(--gold-pale); font-family: 'Cormorant Garamond', serif; font-size: 16px; margin-bottom: 16px; transition: border-color 0.2s ease; outline: none; }
     .rsvp-input:focus { border-color: rgba(201,169,110,0.5); }
     .rsvp-input::placeholder { color: rgba(245,230,200,0.25); font-style: italic; }
     .rsvp-input.textarea { resize: none; height: 80px; }
-
     .choice-group { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-    .choice-btn {
-      flex: 1; min-width: 100px; padding: 10px 8px; border-radius: 3px;
-      font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 500;
-      letter-spacing: 1px; cursor: pointer; transition: all 0.2s ease;
-      text-transform: uppercase; background: transparent;
-      border: 1px solid rgba(201,169,110,0.2); color: rgba(245,230,200,0.45); text-align: center;
-    }
+    .choice-btn { flex: 1; min-width: 100px; padding: 10px 8px; border-radius: 3px; font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; background: transparent; border: 1px solid rgba(201,169,110,0.2); color: rgba(245,230,200,0.45); text-align: center; }
     .choice-btn.selected { background: rgba(201,169,110,0.12); border-color: var(--gold); color: var(--gold-pale); }
-
-    .submit-btn {
-      width: 100%; padding: 14px; background: var(--gold); border: none;
-      border-radius: 3px; color: var(--dark);
-      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      cursor: pointer; transition: all 0.25s ease; margin-top: 4px;
-    }
+    .submit-btn { width: 100%; padding: 14px; background: var(--gold); border: none; border-radius: 3px; color: var(--dark); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; transition: all 0.25s ease; margin-top: 4px; }
     .submit-btn:active { opacity: 0.85; transform: scale(0.99); }
-
     .error-msg { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: rgba(200,100,100,0.8); text-align: center; margin-bottom: 10px; display: none; }
-
-    .rsvp-success {
-      display: none; text-align: center; padding: 24px 16px;
-      background: rgba(201,169,110,0.06); border: 1px solid rgba(201,169,110,0.15);
-      border-radius: 3px;
-    }
+    .rsvp-success { display: none; text-align: center; padding: 24px 16px; background: rgba(201,169,110,0.06); border: 1px solid rgba(201,169,110,0.15); border-radius: 3px; }
     .rsvp-success p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--gold); line-height: 1.6; }
     .rsvp-success .rsvp-sub { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 2px; color: rgba(201,169,110,0.5); text-transform: uppercase; margin-top: 10px; font-style: normal; }
-
     .ornament-bottom { text-align: center; margin-top: 28px; animation: fadeUp 0.8s 0.95s ease both; opacity: 0; }
     .ornament-bottom span { color: rgba(201,169,110,0.3); font-size: 12px; letter-spacing: 8px; }
   </style>
 </head>
 <body>
-
   <div class="deco-circle-1"></div>
   <div class="deco-circle-2"></div>
   <div class="confetti-container" id="confetti"></div>
-
   <div class="card">
-
     <div class="ornament"><span>✦ &nbsp; ✦ &nbsp; ✦</span></div>
-
     <div class="header">
       <p class="eyebrow">You have been personally summoned</p>
       <h1 class="name">Valeriya's</h1>
       <p class="subtitle">Birthday Night</p>
     </div>
-
     <div class="divider">
       <div class="divider-line left"></div>
       <span class="divider-icon">🥂</span>
       <div class="divider-line right"></div>
     </div>
-
     <div class="quote">
       <p>"Let's make memories I'll brag about for years."</p>
     </div>
-
     <div class="details">
       <div class="detail-row">
         <span class="detail-icon">📅</span>
@@ -196,44 +106,33 @@
         <div><p class="detail-label">Where</p><p class="detail-value">Casa Madera</p><p class="detail-sub">550 Wellington St W</p></div>
       </div>
     </div>
-
     <div class="warning">
       <p>✨ &nbsp; The night begins at 8. Don't miss the beginning. &nbsp; ✨</p>
     </div>
-
     <div class="rsvp-section" id="rsvpSection">
-
       <span class="rsvp-label">Your name</span>
       <input class="rsvp-input" id="nameInput" type="text" placeholder="Your full name…" />
-
       <span class="rsvp-label">Will you be attending?</span>
       <div class="choice-group" id="attendingGroup">
         <button class="choice-btn" onclick="selectChoice('attending', this, &quot;I'll be there 🥂&quot;)">I'll be there 🥂</button>
         <button class="choice-btn" onclick="selectChoice('attending', this, &quot;Can't make it 😔&quot;)">Can't make it 😔</button>
       </div>
-
       <span class="rsvp-label">Will you be arriving solo or with a guest?</span>
       <div class="choice-group" id="plusoneGroup">
         <button class="choice-btn" onclick="selectChoice('plusone', this, &quot;Yes, I'll have company&quot;)">Yes, I'll have company</button>
         <button class="choice-btn" onclick="selectChoice('plusone', this, &quot;Just me, I'm the main character&quot;)">Just me, I'm the main character</button>
       </div>
-
       <span class="rsvp-label">Leave Valeriya a message</span>
       <textarea class="rsvp-input textarea" id="messageInput" placeholder="Say something lovely…"></textarea>
-
       <p class="error-msg" id="errorMsg">Please fill in your name and all selections above ✦</p>
       <button class="submit-btn" onclick="submitRSVP()">Send my RSVP ✦</button>
     </div>
-
     <div class="rsvp-success" id="rsvpSuccess">
       <p id="successMsg"></p>
       <p class="rsvp-sub">Valeriya has been notified. See you soon.</p>
     </div>
-
     <div class="ornament-bottom"><span>✦ &nbsp; ✦ &nbsp; ✦</span></div>
-
   </div>
-
   <script>
     const cont = document.getElementById('confetti');
     const colors = ['#c9a96e','#f5e6c8','#e8d5b0','#ffffff','#1a1a1a'];
@@ -244,44 +143,36 @@
       el.style.cssText = `left:${Math.random()*100}%;width:${size}px;height:${isCircle?size:size*0.4}px;border-radius:${isCircle?'50%':'2px'};background:${colors[Math.floor(Math.random()*colors.length)]};opacity:${0.4+Math.random()*0.5};animation-duration:${2.5+Math.random()*3}s;animation-delay:${Math.random()*5}s;`;
       cont.appendChild(el);
     }
-
     const selections = { attending: '', plusone: '' };
-
     function selectChoice(group, btn, value) {
       selections[group] = value;
       document.querySelectorAll(`#${group}Group .choice-btn`).forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
     }
-
     function submitRSVP() {
       const name = document.getElementById('nameInput').value.trim();
       const message = document.getElementById('messageInput').value.trim();
       const err = document.getElementById('errorMsg');
-
       if (!name || !selections.attending || !selections.plusone) {
         err.style.display = 'block';
         setTimeout(() => err.style.display = 'none', 3000);
         return;
       }
-
       const FORM_ID = '1FAIpQLSdDg4qQqYdR6sCulJte1GnF63ZymRoWcjGSdUbnxTE1Knvhfw';
       const iframe = document.createElement('iframe');
       iframe.name = 'silent-submit';
       iframe.style.display = 'none';
       document.body.appendChild(iframe);
-
       const form = document.createElement('form');
       form.method = 'POST';
       form.action = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
       form.target = 'silent-submit';
-
       const fields = {
         'entry.753256438': name,
         'entry.677177250': selections.attending,
         'entry.1514465093': selections.plusone,
         'entry.1968330831': message
       };
-
       for (const [key, val] of Object.entries(fields)) {
         const input = document.createElement('input');
         input.type = 'hidden';
@@ -289,15 +180,10 @@
         input.value = val;
         form.appendChild(input);
       }
-
       document.body.appendChild(form);
       form.submit();
-
       const attending = selections.attending.includes('be there');
-      document.getElementById('successMsg').textContent = attending
-        ? 'Obviously. See you there. 🥂'
-        : 'Noted. 🥂';
-
+      document.getElementById('successMsg').textContent = attending ? 'Obviously. See you there. 🥂' : 'Noted. 🥂';
       document.getElementById('rsvpSection').style.display = 'none';
       document.getElementById('rsvpSuccess').style.display = 'block';
     }
